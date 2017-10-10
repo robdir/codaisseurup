@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event, notice: "Event created!"
     else
-      render:new
+      render :new
     end
   end
 
