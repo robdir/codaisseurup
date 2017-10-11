@@ -28,4 +28,16 @@ RSpec.describe Event, type: :model do
         expect(Event.order_by_price).to eq([event3, event1, event2])
       end
     end
+
+    it { is_expected.to belong_to :user}
+
+
+  #   describe "association with user" do
+  # let(:user) { create :user }
+  #
+  # it "belongs to a user" do
+  #   event = user.events.build(home_type: "Shared")
+  #
+  #   expect(event.user).to eq(user)
+  # end
   end
