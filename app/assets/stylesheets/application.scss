@@ -2,8 +2,10 @@
 @import "bootstrap";
 
 body {
-    background-color: lightblue;
+    background-color: lightblue ;
+
 }
+
 
 h1 {
     color: white;
@@ -13,4 +15,9 @@ h1 {
 p {
     font-family: verdana;
     font-size: 20px;
+}
+
+.navbar {
+    background-color: #A4C8EC;
+    background-image: none;
 }

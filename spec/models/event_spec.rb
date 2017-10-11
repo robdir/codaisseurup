@@ -29,7 +29,11 @@ RSpec.describe Event, type: :model do
       end
     end
 
+#this is the shoulda version
+
     it { is_expected.to belong_to :user}
+
+#LONGHAND
 
 
   #   describe "association with user" do
