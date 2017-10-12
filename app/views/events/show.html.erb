@@ -11,6 +11,7 @@
     <h4>About</h4>
     <p><%= @event.description %></p>
     <p> Capacity: <%= @event.capacity %></p>
+    <p> Location: <%= @event.location %></p>
     <p> Start time: <%= @event.starts_at %></p>
     <p> End time: <%= @event.ends_at %></p>
 
@@ -28,7 +29,11 @@
 
     <h4>Photos</h4>
       <% @event.photos.each do |photo| %>
-      <%= image_tag photo.image %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= image_tag photo.image.thumbnail %>
+        </div>
+      </div>
     <% end %>
 
   </div>
