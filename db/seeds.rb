@@ -1,4 +1,7 @@
+Photo.destroy_all
 Category.destroy_all
+Event.destroy_all
+Profile.destroy_all
 User.destroy_all
 
 rob = User.create(email: "rhwickham@gmail.com", password: "caledon")
@@ -16,3 +19,6 @@ Category.create!([
   { name: "Serious thinking"},
   { name: "Food & Drink"},
   ])
+
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dbk0w1uqs/image/upload/v1507802048/De-Kromme-Haring-10_ihfy6t.jpg", event: event)
+photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dbk0w1uqs/image/upload/v1507801699/guys-drinking_eoh9xu.jpg", event: event)

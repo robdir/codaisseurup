@@ -51,6 +51,7 @@ end
 
 gem 'carrierwave', '0.11.2'
 
+gem 'cloudinary', '1.2.3'
 
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
