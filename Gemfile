@@ -49,6 +49,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem 'carrierwave', '0.11.2'
+
+
 # Use Bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
 
