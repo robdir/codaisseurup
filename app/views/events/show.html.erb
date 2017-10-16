@@ -1,34 +1,45 @@
-<div class="panel panel-primary" style= "background-color: WhiteSmoke;">
-  <div class="panel-heading"><%= @event.name %></div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Register</div>
+
+    <div class="panel-body">
+      <%= render 'registrations/form' %>
+    </div>
+  </div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4><%= @event.name %></h4>
+  </div>
 
   <div class="panel-body">
-
-    <p>Event: <%= @event.name %></p>
-    <p>Host: <%= @event.user.email %></p>
-
-
     <!-- About -->
     <h4>About</h4>
     <p><%= @event.description %></p>
-    <p> Capacity: <%= @event.capacity %></p>
-    <p> Location: <%= @event.location %></p>
-    <p> Start time: <%= @event.starts_at %></p>
-    <p> End time: <%= @event.ends_at %></p>
+
+    <!-- Main Info -->
+    <h4>Main Info</h4>
+    <p>Location: <%= @event.location %></p>
+    <p>Host: <%= @event.user.email %></p>
+    <p>Price: <%= @event.price %></p>
+    <p>Capacity: <%= @event.capacity %> <%= @event.capacity > 1 ? "guests" : "guest" %></p>
+    <p>Date: <%= @event.starts_at %></p>
 
     <!-- Amenities -->
-    <h4>What's on?</h4>
-    <ul class="activities">
-      <li><%= !@event.includes_food ? ("<s>Food included</s>").html_safe : "Food included" %></li>
-      <li><%= !@event.includes_drinks ? ("<s>Kitchen</s>").html_safe : "Drinks included" %></li>
+    <h4>Amenities</h4>
+    <ul class="amenities">
+      <li><%= !@event.includes_food ? ("<s>Food</s>").html_safe : "Food" %></li>
+      <li><%= !@event.includes_drinks ? ("<del>Drinks</del>").html_safe : "Drinks" %></li>
     </ul>
 
+    <!-- Categories -->
     <h4>Categories</h4>
-      <% @categories.each do |category| %>
+    <% @categories.each do |category| %>
       <span class="label label-success"><%= category.name %></span>
     <% end %>
 
+    <!-- Photos -->
     <h4>Photos</h4>
-      <% @event.photos.each do |photo| %>
+    <% @photos.each do |photo| %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <%= image_tag photo.image.thumbnail %>
@@ -36,6 +47,9 @@
       </div>
     <% end %>
 
+    <!-- Status -->
+    <h4>Status</h4>
+    <p><%= !@event.active ? ("<del>Unpiublished</del>").html_safe : "Published" %></p>
   </div>
 
 </div>

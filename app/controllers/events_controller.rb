@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
+  skip_before_action :verify_authenticity_token
+
 
   def index
     @events = current_user.events
@@ -58,9 +60,9 @@ class EventsController < ApplicationController
 
   def event_params
     params
-      .require(:event)
-      .permit(
-        :name, :description, :location, :price, :capacity, :includes_food,
+    .require(:event)
+    .permit(
+      :name, :description, :location, :price, :capacity, :includes_food,
         :includes_drinks,:starts_at, :ends_at, :active, category_ids: []
       )
     end
